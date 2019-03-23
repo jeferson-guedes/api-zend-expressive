@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Announcements;
 
+use Zend\Expressive\Application;
+
+
 /**
  * The configuration provider for the Announcements module
  *
@@ -31,9 +34,15 @@ class ConfigProvider
     public function getDependencies() : array
     {
         return [
+            'delegators' => [
+                Application::class => [
+                    RoutesDelegator::class,
+                ],
+            ],
             'invokables' => [
             ],
             'factories'  => [
+                Handler\AnnouncementsReadHandler::class => Handler\AnnouncementsReadHandlerFactory::class,
             ],
         ];
     }
