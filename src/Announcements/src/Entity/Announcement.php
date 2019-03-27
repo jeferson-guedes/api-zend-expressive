@@ -183,7 +183,7 @@ class Announcement
      * @param \DateTime $modified
      * @throws \Exception
      */
-    public function setModified(\DateTime $modified = null): void
+    public function setModified(\DateTime $modified  = null): void
     {
         if (!$modified) {
             $this->modified = new \DateTime("now");

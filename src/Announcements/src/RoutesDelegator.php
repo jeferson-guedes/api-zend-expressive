@@ -30,10 +30,10 @@ class RoutesDelegator
             'announcements.view'
         );
         $app->get(
-            '/announcements/[page/{page:\d+}]',
+            '/announcements/[?page={page:\d+}]',
             Handler\AnnouncementsReadHandler::class,
-            'announcements.read'
-        );
+            'announcements.read');
+
 
         $app->put(
             '/announcements/{id:\d+}[/]',
